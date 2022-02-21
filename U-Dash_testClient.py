@@ -1,4 +1,5 @@
 import socket
+from sqlite3 import connect
 
 HEADER = 64
 PORT = 5050
@@ -19,12 +20,14 @@ def send(msg):
     client.send(message)
     print(client.recv(2048).decode(FORMAT))
 
-
-print("connected.")
-while True:
-
-    msg = input()
-    if msg==DISCONNECT_MESSAGE:
-        print("disconnecting...")
+def start(): 
+    connected = True
+    print("connected.")
+    while connected:
+        msg = input()
+        if msg==DISCONNECT_MESSAGE:
+            send(msg)
+            connected = False
         send(msg)
-    send(msg)
+
+start()
