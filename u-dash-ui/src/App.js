@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Message from './components/Messages';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          U-DASH
+        <Message />
       </header>
     </div>
   );
