@@ -1,6 +1,6 @@
 #This is the main backend for all U-dash operations
 from fastapi import FastAPI
-from starlette.middleware.cors import CORSMiddleware
+# from starlette.middleware.cors import CORSMiddleware
 from fastapi import Depends, FastAPI
 from sqlalchemy.orm import Session
 
@@ -18,23 +18,26 @@ def get_db():
     finally:
         db.close()
 
-origins = [
-    'http://localhost:3000'
-]
+# origins = [
+#     'http://localhost:3000'
+# ]
 
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=['GET'],
-    allow_headers=['Content-Type','application/xml'],
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=origins,
+#     allow_credentials=True,
+#     allow_methods=['GET', 'POST', 'PUT'],
+#     allow_headers=['Content-Type','application/xml'],
+# )
+
+
+@app.get("/gps/{longitude}/{latitude}")
+async def update_gps(longitude: int, latitude: int, db: Session = Depends(get_db)):
+    gps = controller.update_location(db, longitude, latitude)
+    return {gps.longitude, gps.latitude}
 
 @app.get("/")
 async def root():
     return {"This sucks"}
 
-@app.put("/gps/{longitude}/{latitude}")
-async def update_gps(longitude: int, latitude: int, db: Session = Depends(get_db)):
-    controller.update_location(db, longitude, latitude)

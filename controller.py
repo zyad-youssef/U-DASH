@@ -10,3 +10,4 @@ def get_location(db: Session):
 def update_location(db: Session, _longitude: int, _latitdue: int):
     db_gps = models.GPS(longitude = _longitude, latitude = _latitdue)
     db.add(db_gps)
+    return db_gps

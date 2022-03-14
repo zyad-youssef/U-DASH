@@ -1,41 +1,41 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-import database
+from database import Base
 
-class User(database.Base):
+class User(Base):
         __tablename__ = "users"
 
         id = Column(Integer, primary_key=True, index=True)
-        email = Column(String, unique=True, index=True)
-        hashed_password = Column(String)
+        email = Column(String(256), unique=True, index=True)
+        hashed_password = Column(String(256))
         is_active = Column(Boolean, default=True)
 
         orders = relationship("Orders", back_populates="owner")
 
-class Orders(database.Base):
+class Orders(Base):
     __tablename__ = "orders"
 
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    location = Column(String, index=True)
+    title = Column(String(256), index=True)
+    location = Column(String(256), index=True)
     owner_id = Column(Integer, ForeignKey("users.id"))
     food_id = Column(Integer, ForeignKey("foods.id"))
 
     owner = relationship("User", back_populates="orders")
 
 
-class GPS(database.Base):
+class GPS(Base):
     __tablename__ = "gps"
 
     id = Column(Integer, primary_key=True, index=True)
     longitude = Column(Integer, index=True)
     latitude = Column(Integer, index=True)
 
-class Foods(database.Base):
+class Foods(Base):
     __tablename__ = "foods"
 
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String, index=True)
-    Description = Column(String, index=True)
+    title = Column(String(256), index=True)
+    Description = Column(String(256), index=True)
 
