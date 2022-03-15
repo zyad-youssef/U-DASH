@@ -1,4 +1,6 @@
+from tokenize import Double
 from typing import List, Optional
+from unicodedata import numeric
 
 from pydantic import BaseModel
 
@@ -32,8 +34,8 @@ class User(UserBase):
         orm_mode = True
 
 class GPSBase(BaseModel):
-    longitude: int
-    latitude: int
+    longitude: float
+    latitude: float
 
 class GPSCreate(GPSBase):
     pass

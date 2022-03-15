@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, Numeric, String
 from sqlalchemy.orm import relationship
 
 from database import Base
@@ -29,8 +29,8 @@ class GPS(Base):
     __tablename__ = "gps"
 
     id = Column(Integer, primary_key=True, index=True)
-    longitude = Column(Integer, index=True)
-    latitude = Column(Integer, index=True)
+    longitude = Column(Numeric, index=True)
+    latitude = Column(Numeric, index=True)
 
 class Foods(Base):
     __tablename__ = "foods"

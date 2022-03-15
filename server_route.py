@@ -33,9 +33,9 @@ def get_db():
 
 
 @app.get("/gps/{longitude}/{latitude}")
-async def update_gps(longitude: int, latitude: int, db: Session = Depends(get_db)):
+async def update_gps(longitude: float, latitude: float, db: Session = Depends(get_db)):
     gps = controller.update_location(db, longitude, latitude)
-    return {gps.longitude, gps.latitude}
+    return gps.longitude, latitude
 
 @app.get("/gps")
 async def get_cart_location(db: Session = Depends(get_db)):
