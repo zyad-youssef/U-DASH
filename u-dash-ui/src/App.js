@@ -5,9 +5,7 @@ import Message from './components/Messages';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Message />
-      </header>
+      <Message/>
     </div>
   );
 }

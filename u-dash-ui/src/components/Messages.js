@@ -17,9 +17,8 @@ export default function Message() {
             message()
         }, [])
         return (
-        <div> 
-            {result} 
-        </div>
-        );
-    
+            <div>
+            {result}
+            </div>
+            )
 }
