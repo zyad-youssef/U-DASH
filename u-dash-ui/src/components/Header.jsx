@@ -12,6 +12,10 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 
+import { Box, List, ListItem, ListItemIcon, Divider, Button, Drawer, ListItemText } from '@material-ui/core';
+import TemporaryDrawer from './drawer';
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -27,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MenuAppBar() {
+  const [state, setState] = React.useState({
+    left: false,
+  });
+
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -47,34 +55,12 @@ export default function MenuAppBar() {
   return (
     <div className={classes.root}>
       <FormGroup>
-
       </FormGroup>
       <AppBar className={classes.root} position="static" >
-        <Toolbar>
-
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={handleMenu}>
-            <MenuIcon />
-          </IconButton>
+      <TemporaryDrawer onClick = {handleChange}> </TemporaryDrawer> 
           <Typography variant="h6" className={classes.title}>
             U-Dash
           </Typography>
-          <div>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              open={open}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}> Orders </MenuItem>
-              <MenuItem onClick={handleClose}> About </MenuItem>
-            </Menu>
-          </div>
-        </Toolbar>
       </AppBar>
     </div>
   );
