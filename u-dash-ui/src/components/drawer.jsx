@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Box, List, ListItem, ListItemIcon, Divider, Button, Drawer, ListItemText } from '@material-ui/core';
-
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 export default function TemporaryDrawer() {
     const [state, setState] = React.useState({
@@ -49,7 +50,14 @@ export default function TemporaryDrawer() {
         <div>
             {['DASHBOARD'].map((anchor) => (
                 <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)} style={{ float: 'left' }}>{anchor}</Button>
+                    <IconButton
+                        onClick={toggleDrawer(anchor, true)} style={{ float: 'left' }}
+                        edge="start"
+                        color="inherit"
+                        aria-label="open drawer"
+                        sx={{ mr: 2, display: { xs: 'block', sm: 'none', }, }}>
+                        <MenuIcon />
+                    </IconButton>
                     <Drawer
                         anchor={anchor}
                         open={state[anchor]}

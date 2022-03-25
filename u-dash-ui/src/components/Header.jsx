@@ -57,10 +57,10 @@ export default function MenuAppBar() {
       <FormGroup>
       </FormGroup>
       <AppBar className={classes.root} position="static" >
-      <TemporaryDrawer onClick = {handleChange}> </TemporaryDrawer> 
-          <Typography variant="h6" className={classes.title}>
-            U-Dash
-          </Typography>
+        <TemporaryDrawer onClick={handleChange}> </TemporaryDrawer>
+        <Typography variant="h6" className={classes.title}>
+          U-Dash
+        </Typography>
       </AppBar>
     </div>
   );
