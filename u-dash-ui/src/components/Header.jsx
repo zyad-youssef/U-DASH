@@ -14,7 +14,7 @@ import Menu from '@material-ui/core/Menu';
 
 import { Box, List, ListItem, ListItemIcon, Divider, Button, Drawer, ListItemText } from '@material-ui/core';
 import TemporaryDrawer from './drawer';
-
+import logo from './ulogo.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,8 +57,8 @@ export default function MenuAppBar() {
       <FormGroup>
       </FormGroup>
       <AppBar className={classes.root} position="static" >
-        <Typography variant="h6" className={classes.title}>
-          U-Dash
+        <Typography variant="h4" className={classes.title} style={{textAlign: 'left'}}>
+
         </Typography>
         <TemporaryDrawer onClick={handleChange}></TemporaryDrawer>
       </AppBar>

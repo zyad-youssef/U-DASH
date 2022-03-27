@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Box, List, ListItem, ListItemIcon, Divider, Button, Drawer, ListItemText } from '@material-ui/core';
+import { Typography, Box, List, ListItem, ListItemIcon, Divider, Button, Drawer, ListItemText } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import logo from './ulogo.png';
 
 export default function TemporaryDrawer() {
     const [state, setState] = React.useState({
@@ -58,12 +59,18 @@ export default function TemporaryDrawer() {
                         sx={{ mr: 2, display: { xs: 'block', sm: 'none', }, }}>
                         <MenuIcon />
                     </IconButton>
+                    {/* This block was added for naming and logo integration
+                    TODO: CHANGE ONCE NEW LOGO IS MADE */}
+                    <Typography variant="h4" style={{ textAlign: 'left' }}>
+                        <img src={logo} width="30" height="25" alt="Logo" />Dash
+                    </Typography>
                     <Drawer
                         anchor={anchor}
                         open={state[anchor]}
                         onClose={toggleDrawer(anchor, false)}
                     >
                         {list(anchor)}
+
                     </Drawer>
                 </React.Fragment>
             ))}
