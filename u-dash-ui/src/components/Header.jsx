@@ -56,10 +56,7 @@ export default function MenuAppBar() {
     <div className={classes.root}>
       <FormGroup>
       </FormGroup>
-      <AppBar className={classes.root} position="static" >
-        <Typography variant="h4" className={classes.title} style={{textAlign: 'left'}}>
-
-        </Typography>
+      <AppBar className={classes.root} position="static">
         <TemporaryDrawer onClick={handleChange}></TemporaryDrawer>
       </AppBar>
     </div>

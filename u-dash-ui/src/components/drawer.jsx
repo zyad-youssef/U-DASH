@@ -59,10 +59,10 @@ export default function TemporaryDrawer() {
                         sx={{ mr: 2, display: { xs: 'block', sm: 'none', }, }}>
                         <MenuIcon />
                     </IconButton>
-                    {/* This block was added for naming and logo integration
-                    TODO: CHANGE ONCE NEW LOGO IS MADE */}
+                    {/* TODO This block was added for naming and logo integration
+                    CHANGE ONCE NEW LOGO IS MADE TODO*/}
                     <Typography variant="h4" style={{ textAlign: 'left' }}>
-                        <img src={logo} width="30" height="25" alt="Logo" />Dash
+                        <img src={logo} width="30" height="26" alt="Logo" />Dash
                     </Typography>
                     <Drawer
                         anchor={anchor}
@@ -70,7 +70,6 @@ export default function TemporaryDrawer() {
                         onClose={toggleDrawer(anchor, false)}
                     >
                         {list(anchor)}
-
                     </Drawer>
                 </React.Fragment>
             ))}

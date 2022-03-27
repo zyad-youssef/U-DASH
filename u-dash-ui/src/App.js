@@ -24,7 +24,7 @@ function App() {
         </Container></div>
       </main>
       <Message /> */}
-      <Header></Header>  
+      <Header> </Header>  
     </div>
   );
 }
