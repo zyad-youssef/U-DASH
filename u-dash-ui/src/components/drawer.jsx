@@ -3,11 +3,25 @@ import { Typography, Box, List, ListItem, ListItemIcon, Divider, Button, Drawer,
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from './ulogo.png';
+import { Route, Routes, Link } from "react-router-dom";
+import Menu from './Menu';
 
 export default function TemporaryDrawer() {
     const [state, setState] = React.useState({
         left: false
     });
+
+    let routes = (
+        <Routes>
+            <Route exact path="/">
+                <Menu />
+            </Route>
+        </Routes>
+    );
+
+    const AdapterLink = React.forwardRef((props, ref) => (
+        <Link innerRef={ref} {...props} />
+    ));
 
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -26,7 +40,7 @@ export default function TemporaryDrawer() {
         >
             <List>
                 {['Menu'].map((text, index) => (
-                    <ListItem button key={text}>
+                    <ListItem button key={"Menu"}>
                         <ListItemIcon>
                         </ListItemIcon>
                         <ListItemText primary={text} />
@@ -35,14 +49,11 @@ export default function TemporaryDrawer() {
             </List>
             <Divider />
             <List>
-                {['Orders', 'Locations', 'History'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
+                <ListItem button key={"Orders"}>
+                    <ListItemIcon>
+                    </ListItemIcon>
+                    <ListItemText primary={"Orders"}/>
+                </ListItem>
             </List>
         </Box>
     );
