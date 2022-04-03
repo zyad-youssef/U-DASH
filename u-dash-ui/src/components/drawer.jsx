@@ -46,9 +46,9 @@ export default function TemporaryDrawer() {
                 onKeyDown={toggleDrawer(anchor, false)}
             >
                 <List>
-                    <Link to="menu">
+                    <Link to="/menu"  >
                         {['Menu'].map((text, index) => (
-                            <ListItem button key={"Menu"}>
+                            <ListItem button key={"Menu"} onClick={() => {window.location.href="/menu"}}>
                                 <ListItemIcon>
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
@@ -58,8 +58,8 @@ export default function TemporaryDrawer() {
                 </List>
                 <Divider />
                 <List>
-                    <Link to="orders">
-                        <ListItem button key={"Orders"}>
+                    <Link to="/orders"  >
+                        <ListItem button key={"Orders"} onClick={() => {window.location.href="/orders"}}>
                             <ListItemIcon>
                             </ListItemIcon>
                             <ListItemText primary={"Orders"} />
