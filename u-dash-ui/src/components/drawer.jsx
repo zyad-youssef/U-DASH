@@ -3,21 +3,27 @@ import { Typography, Box, List, ListItem, ListItemIcon, Divider, Button, Drawer,
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import logo from './ulogo.png';
-import { Route, Routes, Link } from "react-router-dom";
-import Menu from './Menu';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Redirect,
+    Link,
+} from "react-router-dom";
+
 
 export default function TemporaryDrawer() {
     const [state, setState] = React.useState({
         left: false
     });
 
-    let routes = (
-        <Routes>
-            <Route exact path="/">
-                <Menu />
-            </Route>
-        </Routes>
-    );
+    // let routes = (
+    //     <Routes>
+    //         <Route exact path="/">
+    //             <Menu />
+    //         </Route>
+    //     </Routes>
+    // );
 
     const AdapterLink = React.forwardRef((props, ref) => (
         <Link innerRef={ref} {...props} />
@@ -32,30 +38,36 @@ export default function TemporaryDrawer() {
     };
 
     const list = (anchor) => (
-        <Box
-            sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-        >
-            <List>
-                {['Menu'].map((text, index) => (
-                    <ListItem button key={"Menu"}>
-                        <ListItemIcon>
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                <ListItem button key={"Orders"}>
-                    <ListItemIcon>
-                    </ListItemIcon>
-                    <ListItemText primary={"Orders"}/>
-                </ListItem>
-            </List>
-        </Box>
+        <Router>
+            <Box
+                sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+                role="presentation"
+                onClick={toggleDrawer(anchor, false)}
+                onKeyDown={toggleDrawer(anchor, false)}
+            >
+                <List>
+                    <Link to="menu">
+                        {['Menu'].map((text, index) => (
+                            <ListItem button key={"Menu"}>
+                                <ListItemIcon>
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </Link>
+                </List>
+                <Divider />
+                <List>
+                    <Link to="orders">
+                        <ListItem button key={"Orders"}>
+                            <ListItemIcon>
+                            </ListItemIcon>
+                            <ListItemText primary={"Orders"} />
+                        </ListItem>
+                    </Link>
+                </List>
+            </Box>
+        </Router>
     );
 
     return (
@@ -83,6 +95,7 @@ export default function TemporaryDrawer() {
                         {list(anchor)}
                     </Drawer>
                 </React.Fragment>
+
             ))}
         </div>
     );
