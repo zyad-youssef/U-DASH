@@ -5,28 +5,30 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import logo from './ulogo.png';
+
 
 export default function ImgMediaCard() {
   return (
+
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+      <CardMedia class="center" style={{ width: 100, height: 100, paddingTop: '0%' }}
         component="img"
-        alt="green iguana"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        alt="red U"
+        height="350"
+        image={require('./ulogo.png')}
+
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          U OF U
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          This school sucks, also starship
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Order</Button>
       </CardActions>
     </Card>
   );
