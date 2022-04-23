@@ -35,7 +35,7 @@ def get_db():
 
 
 
-@app.get("/gps/{longitude}/{latitude}")
+@app.post("/gps/{longitude}/{latitude}")
 async def update_gps(longitude: float, latitude: float, db: Session = Depends(get_db)):
     gps = controller.update_location(db, longitude, latitude)
     return gps.longitude, latitude
