@@ -1,5 +1,6 @@
 import React from "react";
-  
+import ImgMediaCard from "./card";
+
 function Orders() {
   return (
     <div>
