@@ -1,15 +1,26 @@
 import React from "react";
 import ImgMediaCard from "./card";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 function Orders() {
   return (
     <div>
-      <h1>Orders Page</h1>
-      <div class = "center" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 20 }}>
-        <div><ImgMediaCard> </ImgMediaCard></div>
-        <div><ImgMediaCard> </ImgMediaCard></div>
-        <div><ImgMediaCard> </ImgMediaCard></div>
-      </div>
+      <Typography component="div">
+        <Box sx={{ fontSize: 'h4.fontSize', m: 1 }}> U-Dash</Box>
+      </Typography>
+      <Box
+        sx={{ display: 'grid', gap: 6, gridTemplateColumns: 'repeat(6, 1fr)', }}
+        style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '20' }}
+      >
+        <ImgMediaCard> </ImgMediaCard>
+        <ImgMediaCard> </ImgMediaCard>
+        <ImgMediaCard> </ImgMediaCard>
+        <ImgMediaCard> </ImgMediaCard>
+        <ImgMediaCard> </ImgMediaCard>
+        <ImgMediaCard> </ImgMediaCard>
+
+      </Box>
     </div>
   );
 };
