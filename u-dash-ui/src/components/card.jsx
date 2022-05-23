@@ -24,11 +24,11 @@ export default function ImgMediaCard() {
           U OF U
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          This school sucks, also starship
+          Order details go here......
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Order</Button>
+        <Button size="small">Order now</Button>
       </CardActions>
     </Card>
   );

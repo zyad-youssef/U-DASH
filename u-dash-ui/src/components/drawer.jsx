@@ -67,6 +67,15 @@ export default function TemporaryDrawer() {
                         </ListItem>
                     </Link>
                 </List>
+                <List>
+                    <Link to="/Maps"  >
+                        <ListItem button key={"Maps"} onClick={() => {window.location.href="/Maps"}}>
+                            <ListItemIcon>
+                            </ListItemIcon>
+                            <ListItemText primary={"Maps"} />
+                        </ListItem>
+                    </Link>
+                </List>
             </Box>
         </Router>
     );

@@ -19,10 +19,12 @@ function App() {
       <Header> </Header>
       <Router>
         <Routes>
+          <Route path="/" element={<Menu />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/orders" element={<Orders />} />
         </Routes>
       </Router>
+      
     </div>
 
   );
