@@ -49,7 +49,7 @@ export default function TemporaryDrawer() {
                 <List>
                     <Link to="/menu"  >
                         {['Menu'].map((text, index) => (
-                            <ListItem button key={"Menu"} onClick={() => {window.location.href="/menu"}}>
+                            <ListItem button key={"Menu"} onClick={() => { window.location.href = "/menu" }}>
                                 <ListItemIcon>
                                 </ListItemIcon>
                                 <ListItemText primary={text} />
@@ -60,7 +60,7 @@ export default function TemporaryDrawer() {
                 <Divider />
                 <List>
                     <Link to="/orders"  >
-                        <ListItem button key={"Orders"} onClick={() => {window.location.href="/orders"}}>
+                        <ListItem button key={"Orders"} onClick={() => { window.location.href = "/orders" }}>
                             <ListItemIcon>
                             </ListItemIcon>
                             <ListItemText primary={"Orders"} />
@@ -69,10 +69,10 @@ export default function TemporaryDrawer() {
                 </List>
                 <List>
                     <Link to="/Maps"  >
-                        <ListItem button key={"Maps"} onClick={() => {window.location.href="/Maps"}}>
+                        <ListItem button key={"Map"} onClick={() => { window.location.href = "/map" }}>
                             <ListItemIcon>
                             </ListItemIcon>
-                            <ListItemText primary={"Maps"} />
+                            <ListItemText primary={"Map"} />
                         </ListItem>
                     </Link>
                 </List>
