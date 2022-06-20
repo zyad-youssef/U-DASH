@@ -5,6 +5,7 @@ import Header from './components/Header';
 import MapPage from './components/MapPage';
 import Menu from './components/Menu';
 import Orders from './components/Orders'
+import ControllerPage from './components/ControllsPage'
 
 import {
   BrowserRouter as Router,
@@ -24,6 +25,7 @@ function App() {
           <Route path="/menu" element={<Menu/>} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/map" element={<MapPage/>} />
+          <Route path="/controls" element={<ControllerPage/>} />
         </Routes>
       </Router>
     </div>
