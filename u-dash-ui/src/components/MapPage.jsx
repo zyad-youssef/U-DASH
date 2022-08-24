@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react'
 
-import withGoogleMap from 'react-google-maps/lib/withGoogleMap';
-import withScriptjs from 'react-google-maps/lib/withScriptjs';
-import { Component } from 'react';
+
 
 
 class MapPage extends React.Component {
@@ -12,7 +10,7 @@ class MapPage extends React.Component {
       <div>
         <Map
           google={this.props.google}
-          style={{ width: "80%", height: "80%" }}
+          style={{ width: "100%", height: "100%" }}
           zoom={15}
           initialCenter={
             {
@@ -21,12 +19,10 @@ class MapPage extends React.Component {
             }
           }>
           <Marker key="marker_1"
-
             position={{
               lat: 40.7649462,
               lng: -111.8485461
             }}
-
           />
         </Map>
       </div>
